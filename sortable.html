@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mike - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">	
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Mike</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	        	<li class="nav-item active"><a href="project.html" class="nav-link">Project</a></li>
+	        	<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+	        	<li class="nav-item"><a href="team.html" class="nav-link">A propos</a></li>
+	        	<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-2 bread">Project</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Project <i class="ion-ios-arrow-forward"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+		<section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-start mb-5 pb-2">
+          <div class="col-md-4 heading-section ftco-animate">
+          	<span class="subheading subheading-with-line"><small class="pr-2 bg-white">Projects</small></span>
+            
+            <h2 class="mb-4">Sortable</h2>
+          </div>
+          <div class="col-md-8 pl-md-5 heading-section ftco-animate">
+          	<div class="pl-md-4 border-line">
+	          <h2>Objectif</h2>
+                <p>
+                    Vous êtes un méchant et votre rêve est de vous débarrasser de ces super-héros masqués ennuyeux, portant des pantalons de yoga et bizarres. Vous n’avez jamais compris pourquoi certains d’entre eux sont considérés comme des super-héros, simplement parce qu’ils sont riches. D’autres vous ennuient avec leurs discours philosophiques.
+
+
+                    Nous avons trouvé des informations confidentielles sur ces super-héros.
+                    
+                    
+                    Votre tâche consiste à créer une page Web pour organiser toutes les données sur ces smartypants. Toutes ces données peuvent être trouvées ici dans all.json.
+                    
+                    
+                    Vous devez écrire tout le code à partir de zéro. Vous n’êtes pas autorisé à vous fier à des frameworks ou à des bibliothèques comme React, Vue, Svelte, etc.
+                    
+                    
+                    Récupération des données
+                    
+                    
+                    Pour obtenir les informations, vous devez utiliser fetch. Lorsque vous utilisez fetch dans JS, il renvoie toujours une Promise. Nous approfondirons cela plus tard. Pour l’instant, jetez un oeil à ceci:
+                    / Cette fonction est appelée uniquement après que les données ont été récupérées et analysées.
+                    const loadData = héros => {
+                      console.log(héros)
+                    }
+                    
+                    
+                    // Demander le fichier avec fetch, les données seront téléchargées dans le cache de votre navigateur.
+                    récupérer(‘https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json&#8217;)
+                      .then((response) => response.json()) // analyse la réponse de JSON
+                      .then(loadData) // .then appellera la fonction `loadData` avec la valeur JSON.
+                    Afficher
+                    
+                    
+                    Toutes les informations ne sont pas utiles en un coup d’œil, nous n’afficherons donc que certains des champs dans un élément <table>. Les données nécessaires seront :
+                    
+                    
+                    Icône (.images.xs, doit être affiché sous forme d’images et non sous forme de chaîne)
+                    Nom nom)
+                    Nom complet (.biography.fullName)
+                    Powerstats (chaque entrée de .powerstats)
+                    Race (.apparence.race)
+                    Sexe (.apparence.genre)
+                    Hauteur (.apparence.hauteur)
+                    Poids (.apparence.poids)
+                    Lieu de naissance (.biography.placeOfBirth)
+                    Alignement (.biographie.alignement)
+                    Les informations doivent être affichées sur plusieurs pages. Utilisez une entrée <select> pour choisir la taille de la page parmi 10, 20, 50, 100 ou tous les résultats.
+                    
+                    
+                    L’option de taille de page par défaut sélectionnée doit être 20.
+                    Recherche
+                    
+                    
+                    Il doit être possible de filtrer les informations en recherchant le nom sous forme de chaîne. Par exemple, la recherche “homme” devrait trouver tous les super-héros avec “homme” dans leur nom.
+                    
+                    
+                    La recherche doit être interactive. En d’autres termes, les résultats doivent être filtrés après chaque frappe. Nous n’avons donc pas besoin d’un bouton “rechercher”.
+                    
+                    
+                    Trier
+                    
+                    
+                    Il sera utile de trier les informations du tableau selon l’une de ses colonnes. Les résultats doivent être triables par ordre alphabétique ou numérique.
+                    
+                    
+                    Initialement, toutes les lignes doivent être triées par nom de colonne par ordre croissant.
+                    Le premier clic sur un en-tête de colonne triera le tableau en fonction des données de cette colonne dans l’ordre croissant.
+                    Des clics consécutifs sur un en-tête de colonne basculeront entre croissant et décroissant.
+                    Certaines des colonnes sont composées de chaînes, mais représentent des valeurs numériques. Par exemple, lorsque la colonne de poids est triée par ordre croissant, alors “78 kg” doit être affiché avant “100 kg”.
+                    Les valeurs manquantes doivent toujours être triées en dernier, indépendamment de l’ordre croissant ou décroissant.
+                 </p>
+	          
+                 <h2>Github</h2>
+                 
+                    
+          	</div>
+          </div>
+        </div>
+    	</div>
+    	
+		  </div>
+		  <div class="row">
+			<div class="col-md-12 text-center">
+  
+			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Mikikikikikikikiki</a>
+	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+	  
+	
+  
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  
+  
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/jquery.timepicker.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="js/google-map.js"></script>
+	<script src="js/main.js"></script>
+	  
+	</body>
+  </html>
