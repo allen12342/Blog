@@ -1,0 +1,25 @@
+FROM ubuntu:24.04
+
+
+ARG USERNAME
+ARG PASSWORD
+
+
+RUN apt-get update -y && apt-get install -y ca-certificates curl
+
+
+
+RUN groupadd syslog
+
+
+RUN echo "cuwb-network cuwb-network/bad-license boolean true" | debconf-set-selections \
+    && echo "cuwb-network cuwb-network/license-agreement boolean true" | debconf-set-selections \
+    && echo "cuwb-network cuwb-network/increase-udp-buffers boolean true" | debconf-set-selections \
+    && echo "cuwb-network cuwb-network/prompt-ports boolean false" | debconf-set-selections
+
+
+RUN curl -v https://dronisos-nexus.francecentral.cloudapp.azure.com/repository/apt-releases \
+    && echo "deb [trusted=yes] https://${USERNAME}:${PASSWORD}@dronisos-nexus.francecentral.cloudapp.azure.com/repository/apt-releases stretch main" >> /etc/apt/sources.list
+
+
+RUN apt-get update --allow-unauthenticated 
